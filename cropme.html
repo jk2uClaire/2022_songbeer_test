@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cropme</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/cropme.min.css">
+    <link rel="stylesheet" href="css/cropme_style.css">
+
+</head>
+
+<body>
+    <div class="wrapper cropper_page">
+        <h2>cropme 測試</h2>
+        <form action="/somewhere/to/upload" enctype="multipart/form-data">
+            <div class="step">
+                <h3>Step1.上傳圖片</h3>
+                <input id="imgInp" type="file" accept="image/gif, image/jpeg, image/png" multiple>
+            </div>
+            <div class="step">
+                <h3>Step2.製作圖片</h3>
+                <div class="img">
+                    <div class="filter_preview" ondragstart="return false"><img src="images/cropme/filter1.png" alt="">
+                    </div>
+                    <img id="preview_img" src="images/cropme/upload.jpg">
+                </div>
+                <!-- 選取濾鏡 -->
+                <div class="filter_select">
+                    <div class="item">
+                        <input id="filter1" type="radio" name="filter" value="f1" checked>
+                        <label for="filter1">
+                            <img class="sample" src="images/cropme/filter1.png">
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="filter2" type="radio" name="filter" value="f2">
+                        <label for="filter2">
+                            <img class="sample" src="images/cropme/filter2.png">
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="filter3" type="radio" name="filter" value="f3">
+                        <label for="filter3">
+                            <img class="sample" src="images/cropme/filter3.png">
+                        </label>
+                    </div>
+                </div>
+                <!-- 製作按鈕 -->
+                <div class="btn_area">
+                    <a href="javascript:void(0);" id="delete">清除</a>
+                    <a href="javascript:void(0);" id="submit">確認製作</a>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Step3.完成圖片</h3>
+                <img id="final_img" src="">
+                <div class="btn_area">
+                    <a href="javascript:void(0);" id="download">下載圖片</a>
+                </div>
+            </div>
+    </div>
+
+    </form>
+    </div>
+</body>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/cropme.min.js"></script>
+<script src="js/jquery.watermark.min.js"></script>
+<script>
+    $(function () {
+        var isfirst = false;
+        var imgReset = '<div class="filter_preview" ondragstart="return false"><img src="images/cropme/filter1.png" alt=""></div><img id="preview_img" src="images/cropme/upload.jpg">'
+        var filter_val = $('.filter_select input[name="filter"]:checked').val()
+        $("#imgInp").change(function () {
+            if (!isfirst) {
+                readURL(this);
+                toCropme()
+                isfirst = true;
+            } else {
+                $('.img').html(imgReset)
+                readURL(this);
+                toCropme();
+            }
+        });
+
+        $('.filter_select .item').click(function () {
+            var filter_val = $('.filter_select input[name="filter"]:checked').val()
+            if (filter_val == 'f1') {
+                $('.filter_preview img').attr('src', 'images/cropme/filter1.png')
+            } else if (filter_val == 'f2') {
+                $('.filter_preview img').attr('src', 'images/cropme/filter2.png')
+            }
+            else if (filter_val == 'f3') {
+                $('.filter_preview img').attr('src', 'images/cropme/filter3.png')
+            }
+        })
+
+        // step2刪除圖片
+        $("#delete").click(function () {
+            isfirst = false;        
+            $('.img').html(imgReset)
+            $("#final_img").attr('src','')
+        })
+        // step2製作圖片
+        $("#submit").click(function () {
+            toOutput()
+        })
+        // step3下載圖片
+        $("#download").click(function () {
+            var url = $('#final_img').attr('src');
+            var a = document.createElement('a');            // 建立一個a節點插入的document
+            var event = new MouseEvent('click')             // 模擬滑鼠click點選事件
+            a.download = '揪你做伙喝爽啤＿五告SONG創意友情盃'    // 設定a節點的download屬性值
+            a.href = url;                                   // 將圖片的src賦值給a節點的href
+            a.dispatchEvent(event)                          // 觸發滑鼠點選事件
+        })
+    });
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $("#preview_img").attr('src', e.target.result);
+            }
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function toCropme() {
+        $("#preview_img").cropme({
+            container: {
+                width: 600,
+                height: 600
+            },
+            viewport: {
+                width: 600,
+                height: 600,
+                type: "square",
+                border: {
+                    width: 2,
+                    enable: false,
+                    color: "#fff"
+                }
+            },
+            zoom: {
+                enable: true,
+                mouseWheel: true,
+                slider: true
+            },
+            rotation: {
+                slider: false,
+                enable: false,
+                position: "left"
+            },
+            transformOrigin: "viewport"
+        });
+
+    }
+
+
+
+    function toWatermark() {
+        console.log('watermark')
+        $('#final_img').watermark({
+            path: $('.filter_preview img').attr('src'),
+            outputWidth: 600,
+            opacity: 1,
+        });
+    }
+    function toOutput() {
+        $("#final_img").attr('src','')
+        $('#preview_img').cropme('crop', {
+            type: 'base64',
+            width: 600,
+            mimetype: 'image/jpeg',
+            quality: 0.8,
+        }).then(function (output) {
+            // here you can use the base64 output
+            $('#final_img').attr('src', output)
+            toWatermark()
+        });
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,158 @@
+* {
+  -webkit-box-sizing: border-box !important;
+          box-sizing: border-box !important;
+}
+
+.wrapper {
+  width: 1000px;
+  margin: 20px auto;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+h3 {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+a {
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #383838;
+  color: #383838;
+  margin: 20px auto;
+}
+
+a:hover {
+  color: #FFF;
+  background: #383838;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="file"] {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+}
+
+input[type="file"]::file-selector-button {
+  position: absolute;
+  right: -4px;
+  top: 0;
+  background: #ddd;
+  color: #777777;
+  border: none;
+  width: 120px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+input[type="file"]::file-selector-button:hover {
+  color: #555;
+  background-color: #ccc;
+  cursor: pointer !important;
+}
+
+.step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.step h3 {
+  width: 100%;
+}
+
+.step .img {
+  position: relative;
+}
+
+.step .img .filter_preview {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.step .img .cropme-slider {
+  margin-top: -16px !important;
+}
+
+.filter_select {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.filter_select .item {
+  width: 100px;
+  margin: 0 10px;
+}
+
+.filter_select .item .sample {
+  width: 100%;
+  opacity: 0.5;
+}
+
+.filter_select .item input {
+  opacity: 0;
+}
+
+.filter_select .item input[type="radio"]:checked ~ label .sample {
+  opacity: 1;
+}
+
+.btn_area {
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn_area a {
+  margin: 0 5px;
+}
