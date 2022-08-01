@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=11" />
+	<title>登入 - 爽啤友你才夠爽後台</title>
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+
+	<!-- meta -->
+	<meta name="description" content="爽啤 友你才夠爽"/>
+	<meta name="keywords" content="">
+	<meta name="robots" content="NOODP">
+	<meta name="googlebot" content="NOODP">
+	<meta name="googlebot" content="NOODP, nofollow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta http-equiv="X-UA-Compatible" content="IE=7,IE=8,IE=9,IE=10,IE=11,IE=EDGE" /><!-- 強制IE非相容性 -->
+
+	<!-- shortcut icon 
+	<link rel="SHORTCUT ICON" href="images/favicon.ico">-->
+
+	<!-- google material icon -->
+	<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+	<!-- css -->
+	<link href="css/reset.css" rel="stylesheet" type="text/css" charset="utf-8" />
+	<link href="css/admin.css" rel="stylesheet" type="text/css" charset="utf-8"/>
+
+	<!-- js -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+</head>
+ 
+<body>
+	<div class="login_page">
+		<div class="contain">
+			<div class="login_pic"><img src="admin/images/slogn.svg" alt="友你才夠爽後台登入頁面"></div>
+			<div class="login_box">
+				<div class="login-title">請輸入您的帳號及密碼</div>
+				<div class="login_form">
+					<label for="account">帳號</label>
+					<input class="login_input" type="text" name="account" id="account" placeholder="請輸入帳號">
+				</div>
+				<div class="login_form">
+					<label for="password">密碼</label>
+					<input class="login_input" type="password" name="password" id="password" placeholder="請輸入密碼">
+					<a class="material-icons icon" id="pasw_vb" href="#" title="顯示/隱藏密碼">visibility_off</a>
+				</div>
+				<div class="login_form checkbox">
+					<input id="remember_acpw" type="checkbox"> <label for="remember_acpw">記住帳號密碼</label>
+				</div>
+				<a class="login_btn" href="javascript:;">登入</a>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script>
+		$(document).ready(function() {
+			$('#pasw_vb').click(function(e) {
+				e.preventDefault();
+				showhidePasw()
+			})
+
+			// 密碼顯示切換
+			function showhidePasw() {
+				var pasw = $('#password')
+				var pasw_vb = $('#pasw_vb')
+
+				if (pasw.attr('type') == "text") {
+					pasw.attr('type', 'password');
+					pasw_vb.text('visibility_off');
+				} else {
+					pasw.attr('type', 'text');
+					pasw_vb.text('visibility');
+				}
+			}
+		});
+	</script>
+</body>
+
+</html>
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
+    <title>抽獎系統 - 爽啤友你才夠爽後台</title>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+
+    <!-- meta -->
+    <meta name="description" content="爽啤 友你才夠爽" />
+    <meta name="keywords" content="">
+    <meta name="robots" content="NOODP">
+    <meta name="googlebot" content="NOODP">
+    <meta name="googlebot" content="NOODP, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=8,IE=9,IE=10,IE=11,IE=EDGE" /><!-- 強制IE非相容性 -->
+
+    <!-- shortcut icon 
+	<link rel="SHORTCUT ICON" href="images/favicon.ico">-->
+
+    <!-- google material icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+
+    <!-- css -->
+    <link href="css/reset.css" rel="stylesheet" type="text/css" charset="utf-8" />
+    <link href="css/admin.css" rel="stylesheet" type="text/css" charset="utf-8" />
+
+    <!-- js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <ul>
+                <li><a href="index.html">活動紀錄</a></li>
+                <li><a href="lottery.html">抽獎系統</a></li>
+                <li><a href="lottery_list.html">抽獎名單</a></li>
+            </ul>
+        </header>
+        <div class="container">
+            <div class="lottery_list">
+                <form id="searchForm" method="get" action="/admin/dashboard">
+                    <div class="flexbox list_box">
+                        <div class="s">
+                            <select name="" id="">
+                                <option value="">ViewSonic 優派 無線智慧LED口袋投影機 1名</option>
+                                <option value="">RETO 3D 底片相機 2名</option>
+                                <option value="">家樂福 商品券$1,000元 5名</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+                <div class="lottery_area">
+                    <div class="prize">
+                        <h2>ViewSonic 優派 無線智慧LED口袋投影機 1名</h2>
+                    </div>
+                    <a class="admin_btn" href="">抽獎</a>
+                </div>
+                <table class="list_table">
+                    <thead>
+                        <tr>
+                            <th class="w500">姓名</th>
+                            <th class="w500">登入帳號</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>王小明</td>
+                            <td><span class="link_phone">電話登入</span>aaa@yahoo.com.tw</td>
+                        </tr>
+                        <tr>
+                            <td>王小明</td>
+                            <td><span class="link_phone">電話登入</span>aaa@yahoo.com.tw</td>
+                        </tr>
+                        <tr>
+                            <td>王小明</td>
+                            <td><span class="link_phone">電話登入</span>aaa@yahoo.com.tw</td>
+                        </tr>
+                        
+                </table>
+                <a class="admin_btn" href="">確認名單</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
