@@ -1,3 +1,10 @@
+@charset "UTF-8";
+body {
+  font-family: 微軟正黑體, "Microsoft Jhenghei", Arial, sans-serif;
+  font-size: 1em;
+  letter-spacing: 0.05em;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -37,6 +44,19 @@ header ul a:hover {
   width: 95%;
   max-width: 1000px;
   margin: 50px auto;
+}
+
+.large_title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+
+.mid_title {
+  font-size: 20px;
+  text-align: center;
+  margin: 10px auto;
 }
 
 .admin_btn {
@@ -190,27 +210,6 @@ header ul a:hover {
   margin: 10px 0;
 }
 
-.list_select {
-  width: 50%;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 10px 0;
-}
-
-.list_select select {
-  width: 100%;
-  color: #000000;
-  font-size: 1em;
-  border: 1px solid #cccccc;
-  border-radius: 5px 0 0 5px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 10px;
-  outline: none;
-}
-
 .search_input {
   width: 100%;
   color: #000000;
@@ -289,6 +288,15 @@ header ul a:hover {
   vertical-align: middle;
 }
 
+.list_table a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.list_table a:hover {
+  color: #888;
+}
+
 .link_google,
 .link_fb,
 .link_phone {
@@ -339,23 +347,50 @@ header ul a:hover {
   color: #000000;
 }
 
-.lottery_list .lottery_area {
+.lottery .lottery_area {
   margin-bottom: 100px;
 }
 
-.lottery_list .lottery_area .prize {
-  margin: 20px auto 0;
-  padding: 50px;
+.lottery .lottery_area .prize {
+  border: 1px solid #ffd522;
   border-radius: 10px;
-  background: pink;
+  background: #fff;
 }
 
-.lottery_list .lottery_area .prize h2 {
+.lottery .lottery_area .prize h2 {
+  display: block;
+  padding: 50px 0;
+  margin: 4px;
+  background: url("../images/bg.jpg");
+  border-radius: 6px;
   font-size: 30px;
+  font-weight: bold;
   text-align: center;
+  color: #fff;
 }
 
-.lottery_list table th,
-.lottery_list table td {
+.lottery .list_select {
+  width: 50%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px 0;
+}
+
+.lottery .list_select select {
+  width: 100%;
+  color: #000000;
+  font-size: 1em;
+  border: 1px solid #cccccc;
+  border-radius: 5px 0 0 5px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  outline: none;
+}
+
+.lottery table th,
+.lottery table td {
   text-align: center;
 }

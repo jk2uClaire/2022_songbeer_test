@@ -1,3 +1,8 @@
+body {
+    font-family: 微軟正黑體, "Microsoft Jhenghei", Arial, sans-serif;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+}
 * {
     box-sizing: border-box;
 
@@ -37,12 +42,25 @@ header {
 
 }
 
+.large_title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto 40px;
+}
+
+.mid_title {
+    font-size: 20px;
+    text-align: center;
+    margin: 10px auto;
+}
+
 .admin_btn {
     position: relative;
     display: block;
     width: 200px;
     height: 50px;
-    margin:20px auto;
+    margin: 20px auto;
     line-height: 50px;
     text-align: center;
     background: #000;
@@ -183,22 +201,7 @@ header {
     display: flex;
     margin: 10px 0;
 }
-.list_select {
-    width: 50%;
-    position: relative;
-    display: flex;
-    margin: 10px 0;
-    select{
-        width: 100%;
-        color: #000000;
-        font-size: 1em;
-        border: 1px solid #cccccc;  
-        border-radius: 5px 0 0 5px;
-        box-sizing: border-box;
-        padding: 10px;
-        outline: none;
-    }
-}
+
 .search_input {
     width: 100%;
     color: #000000;
@@ -272,6 +275,13 @@ header {
         box-sizing: border-box;
         vertical-align: middle;
     }
+    a{
+        color:#333;
+        text-decoration: underline;
+        &:hover{
+            color:#888
+        }
+    }
 }
 
 .link_google,
@@ -320,22 +330,46 @@ header {
 }
 
 // 抽獎系統
-.lottery_list {
+.lottery {
     .lottery_area {
         margin-bottom: 100px;
 
         .prize {
-            margin: 20px auto 0;
-            padding: 50px;
+            border: 1px solid #ffd522;
             border-radius: 10px;
-            background: pink;
+            background: #fff;
 
             h2 {
+                display: block;
+                padding: 50px 0;
+                margin: 4px;
+                background: url('../images/bg.jpg');
+                border-radius: 6px;
                 font-size: 30px;
+                font-weight: bold;
                 text-align: center;
+                color: #fff;
             }
         }
 
+    }
+
+    .list_select {
+        width: 50%;
+        position: relative;
+        display: flex;
+        margin: 10px 0;
+
+        select {
+            width: 100%;
+            color: #000000;
+            font-size: 1em;
+            border: 1px solid #cccccc;
+            border-radius: 5px 0 0 5px;
+            box-sizing: border-box;
+            padding: 10px;
+            outline: none;
+        }
     }
 
     table {
