@@ -23,7 +23,7 @@
             <div class="step">
                 <h3>Step2.製作圖片</h3>
                 <div class="img">
-                    <div class="filter_preview" ondragstart="return false"><img src="images/cropme/filter1.png" alt="">
+                    <div class="filter_preview" ondragstart="return false"><img src="images/cropme/p1.png" alt="">
                     </div>
                     <img id="preview_img" src="images/cropme/upload.jpg">
                 </div>
@@ -32,19 +32,37 @@
                     <div class="item">
                         <input id="filter1" type="radio" name="filter" value="f1" checked>
                         <label for="filter1">
-                            <img class="sample" src="images/cropme/filter1.png">
+                            <img class="sample" src="images/cropme/p1.png">
                         </label>
                     </div>
                     <div class="item">
                         <input id="filter2" type="radio" name="filter" value="f2">
                         <label for="filter2">
-                            <img class="sample" src="images/cropme/filter2.png">
+                            <img class="sample" src="images/cropme/p2.png">
                         </label>
                     </div>
                     <div class="item">
                         <input id="filter3" type="radio" name="filter" value="f3">
                         <label for="filter3">
-                            <img class="sample" src="images/cropme/filter3.png">
+                            <img class="sample" src="images/cropme/p3.png">
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="filter4" type="radio" name="filter" value="f4">
+                        <label for="filter4">
+                            <img class="sample" src="images/cropme/p4.png">
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="filter5" type="radio" name="filter" value="f5">
+                        <label for="filter5">
+                            <img class="sample" src="images/cropme/p5.png">
+                        </label>
+                    </div>
+                    <div class="item">
+                        <input id="filter6" type="radio" name="filter" value="f6">
+                        <label for="filter6">
+                            <img class="sample" src="images/cropme/p6.png">
                         </label>
                     </div>
                 </div>
@@ -89,20 +107,29 @@
         $('.filter_select .item').click(function () {
             var filter_val = $('.filter_select input[name="filter"]:checked').val()
             if (filter_val == 'f1') {
-                $('.filter_preview img').attr('src', 'images/cropme/filter1.png')
+                $('.filter_preview img').attr('src', 'images/cropme/p1.png')
             } else if (filter_val == 'f2') {
-                $('.filter_preview img').attr('src', 'images/cropme/filter2.png')
+                $('.filter_preview img').attr('src', 'images/cropme/p2.png')
             }
             else if (filter_val == 'f3') {
-                $('.filter_preview img').attr('src', 'images/cropme/filter3.png')
+                $('.filter_preview img').attr('src', 'images/cropme/p3.png')
+            }
+            else if (filter_val == 'f4') {
+                $('.filter_preview img').attr('src', 'images/cropme/p4.png')
+            }
+            else if (filter_val == 'f5') {
+                $('.filter_preview img').attr('src', 'images/cropme/p5.png')
+            }
+            else if (filter_val == 'f6') {
+                $('.filter_preview img').attr('src', 'images/cropme/p6.png')
             }
         })
 
         // step2刪除圖片
         $("#delete").click(function () {
-            isfirst = false;        
+            isfirst = false;
             $('.img').html(imgReset)
-            $("#final_img").attr('src','')
+            $("#final_img").attr('src', '')
         })
         // step2製作圖片
         $("#submit").click(function () {
@@ -170,7 +197,7 @@
         });
     }
     function toOutput() {
-        $("#final_img").attr('src','')
+        $("#final_img").attr('src', '')
         $('#preview_img').cropme('crop', {
             type: 'base64',
             width: 600,
