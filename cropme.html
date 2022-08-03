@@ -16,12 +16,9 @@
     <div class="wrapper cropper_page">
         <h2>cropme 測試</h2>
         <form action="/somewhere/to/upload" enctype="multipart/form-data">
+
             <div class="step">
-                <h3>Step1.上傳圖片</h3>
-                <input id="imgInp" type="file" accept="image/gif, image/jpeg, image/png" multiple>
-            </div>
-            <div class="step">
-                <h3>Step2.製作圖片</h3>
+                <h3>Step1.製作圖片</h3>
                 <div class="img">
                     <div class="filter_preview" ondragstart="return false"><img src="images/cropme/p1.png" alt="">
                     </div>
@@ -68,12 +65,16 @@
                 </div>
                 <!-- 製作按鈕 -->
                 <div class="btn_area">
-                    <a href="javascript:void(0);" id="delete">清除</a>
+                    <!-- 上傳圖片 -->
+                    <label for="imgInp" class="img_inp_btn">上傳圖片</label>
+                    <input id="imgInp" type="file" accept="image/gif, image/jpeg, image/png" multiple>
+                    
+                    <!-- 確認製作 -->
                     <a href="javascript:void(0);" id="submit">確認製作</a>
                 </div>
             </div>
             <div class="step">
-                <h3>Step3.完成圖片</h3>
+                <h3>Step2.完成圖片&下載圖片</h3>
                 <img id="final_img" src="">
                 <div class="btn_area">
                     <a href="javascript:void(0);" id="download">下載圖片</a>
@@ -192,7 +193,7 @@
         console.log('watermark')
         $('#final_img').watermark({
             path: $('.filter_preview img').attr('src'),
-            outputWidth: 600,
+            outputWidth: 1000,
             opacity: 1,
         });
     }
@@ -200,7 +201,7 @@
         $("#final_img").attr('src', '')
         $('#preview_img').cropme('crop', {
             type: 'base64',
-            width: 600,
+            width: 1000,
             mimetype: 'image/jpeg',
             quality: 0.8,
         }).then(function (output) {

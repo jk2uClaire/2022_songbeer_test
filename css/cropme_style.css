@@ -44,40 +44,26 @@ a:hover {
   background: #383838;
 }
 
-label {
-  display: block;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
 input[type="file"] {
+  opacity: 0;
   position: relative;
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  padding: 0 10px;
-  border: 1px solid #ddd;
+  width: 1px;
+  height: 1px;
 }
 
-input[type="file"]::file-selector-button {
-  position: absolute;
-  right: -4px;
-  top: 0;
-  background: #ddd;
-  color: #777777;
-  border: none;
-  width: 120px;
+.img_inp_btn {
+  width: 200px;
   height: 50px;
   line-height: 50px;
-  font-size: 16px;
-  border-radius: 0;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #383838;
+  color: #383838;
 }
 
-input[type="file"]::file-selector-button:hover {
-  color: #555;
-  background-color: #ccc;
-  cursor: pointer !important;
+.img_inp_btn:hover {
+  color: #FFF;
+  background: #383838;
 }
 
 .step {
@@ -104,6 +90,7 @@ input[type="file"]::file-selector-button:hover {
 
 .step .img .filter_preview {
   position: absolute;
+  width: 600px;
   top: 0;
   left: 50%;
   -webkit-transform: translate(-50%, 0);
@@ -112,8 +99,17 @@ input[type="file"]::file-selector-button:hover {
   pointer-events: none;
 }
 
+.step .img .filter_preview img {
+  width: 100%;
+}
+
 .step .img .cropme-slider {
   margin-top: -16px !important;
+}
+
+.step #final_img {
+  width: 600px;
+  max-width: 600px;
 }
 
 .filter_select {

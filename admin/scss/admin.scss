@@ -380,3 +380,13 @@ header {
         }
     }
 }
+.ig_board{
+    ul{
+        display: flex;
+    }
+    .item{width: 30%;
+        margin:10px 1.5%;
+        display: flex;
+        flex-direction: column;
+    }
+}
