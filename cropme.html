@@ -8,7 +8,7 @@
     <title>cropme</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/cropme.min.css">
-    <link rel="stylesheet" href="css/cropme_style.css">
+    <link rel="stylesheet" href="css/cropme_style.css?0803">
 
 </head>
 
@@ -68,7 +68,7 @@
                     <!-- 上傳圖片 -->
                     <label for="imgInp" class="img_inp_btn">上傳圖片</label>
                     <input id="imgInp" type="file" accept="image/gif, image/jpeg, image/png" multiple>
-                    
+
                     <!-- 確認製作 -->
                     <a href="javascript:void(0);" id="submit">確認製作</a>
                 </div>
@@ -104,7 +104,7 @@
                 toCropme();
             }
         });
-
+        // 選擇預覽濾鏡
         $('.filter_select .item').click(function () {
             var filter_val = $('.filter_select input[name="filter"]:checked').val()
             if (filter_val == 'f1') {
@@ -125,18 +125,11 @@
                 $('.filter_preview img').attr('src', 'images/cropme/p6.png')
             }
         })
-
-        // step2刪除圖片
-        $("#delete").click(function () {
-            isfirst = false;
-            $('.img').html(imgReset)
-            $("#final_img").attr('src', '')
-        })
-        // step2製作圖片
+        // step1製作圖片
         $("#submit").click(function () {
             toOutput()
         })
-        // step3下載圖片
+        // step2下載圖片
         $("#download").click(function () {
             var url = $('#final_img').attr('src');
             var a = document.createElement('a');            // 建立一個a節點插入的document
