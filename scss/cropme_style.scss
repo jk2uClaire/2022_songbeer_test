@@ -61,7 +61,7 @@ input[type="file"] {
     text-decoration: none;
     border: 1px solid #383838;
     color: #383838;
-   
+
 
     &:hover {
         color: #FFF;
@@ -79,6 +79,10 @@ input[type="file"] {
         width: 100%;
     }
 
+    p {
+        text-align: left;
+    }
+
     .img {
         position: relative;
 
@@ -90,7 +94,8 @@ input[type="file"] {
             transform: translate(-50%, 0);
             z-index: 100;
             pointer-events: none;
-            img{
+
+            img {
                 width: 100%;
             }
         }
@@ -100,10 +105,11 @@ input[type="file"] {
         }
 
     }
-#final_img{
-    width: 600px;
-    max-width: 600px;
-}
+
+    #final_img {
+        width: 600px;
+        max-width: 600px;
+    }
 }
 
 .filter_select {
@@ -141,3 +147,5 @@ input[type="file"] {
         margin: 0 5px;
     }
 }
+
+@media screen and (max-width: 768px) {}

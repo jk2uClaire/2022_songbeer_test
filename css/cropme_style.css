@@ -84,6 +84,10 @@ input[type="file"] {
   width: 100%;
 }
 
+.step p {
+  text-align: left;
+}
+
 .step .img {
   position: relative;
 }
